@@ -1,1 +1,12 @@
-{}
+{
+  "posts": [
+    {
+      "title": "title2",
+      "author": "CommerceIQ",
+      "views": 10,
+      "reviews": 3,
+      "id": "391a2220-3216-4961-8a0c-9c86b0aa43c0",
+      "test": "test"
+    }
+  ]
+}

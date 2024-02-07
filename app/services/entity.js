@@ -22,7 +22,6 @@ const getEntityById = async (entity, entityId) => {
 const addEntity = async (entity, newEntity) => {
   try {
     const data = await store.readData()
-
     newEntity.id = uuidv4()
     data[entity] = data[entity] || []
     data[entity].push(newEntity)
