@@ -4,8 +4,10 @@ const dbFilePath = process.env.dbFilePath || 'store.json'
 const readData = async () => {
   try {
     const data = await fs.readFile(dbFilePath, 'utf8')
-    return JSON.parse(data)
+    const json = JSON.parse(data)
+    return json
   } catch (error) {
+    console.log(data)
     throw new Error('Error reading data')
   }
 }

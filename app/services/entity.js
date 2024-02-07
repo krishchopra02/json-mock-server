@@ -1,4 +1,5 @@
 const store = require('../models/store')
+const { v4: uuidv4 } = require('uuid')
 
 const getAllEntities = async (entity) => {
   try {
@@ -21,7 +22,9 @@ const getEntityById = async (entity, entityId) => {
 const addEntity = async (entity, newEntity) => {
   try {
     const data = await store.readData()
-    newEntity.id = data[entity].length
+
+    newEntity.id = uuidv4()
+    data[entity] = data[entity] || []
     data[entity].push(newEntity)
 
     await store.writeData(data)
